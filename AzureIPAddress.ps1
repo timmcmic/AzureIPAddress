@@ -231,7 +231,8 @@ function get-AzureDownloadLink
     )
 
     $functionDownloadLink = $NULL
-    $functionLinkString = "click here to download manually"
+    #$functionLinkString = "click here to download manually"
+    $functionLinkString = "Download"
 
     out-logfile -string "Starting get-AzureDownloadLink"
 
@@ -328,7 +329,7 @@ function export-AzureJSONData
 [string]$logFileName = ""
 [string]$staticLogFileName = "AzureIPAddress"
 [string]$azureIPInformationPublicCloud = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519"
-[string]$azureIPInformationGovernmentCloud = "https://www.microsoft.com/en-us/download/confirmation.aspx?id=57063"
+[string]$azureIPInformationGovernmentCloud = "https://www.microsoft.com/en-us/download/details.aspx?id=57063"
 $azurePublicCloudHTMLData = $null
 $azureGovernmentCloudHTMLData = $null
 $azurePublicCloudDownloadLink = $null
