@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.2
+.VERSION 1.3
 
 .GUID bc41499f-a9d2-4329-9110-d049984143c1
 
@@ -208,6 +208,9 @@ function get-AzureHTMLData
 
     try {
         out-logfile -string "Invoking web request to obtain html data."
+        $wshell = New-Object -ComObject wscript.shell
+        $wshell.SendKeys('y')
+        $wshell.sendKeys("{Enter}")
         $functionHTMLData = invoke-webRequest -Uri $azureCloudLocation -errorAction Stop
         out-logfile -string "Web data successfully retrieved."
     }
@@ -264,7 +267,9 @@ function get-AzureJSONData
     try
     {
         out-logfile -string "Invoking web request to obtain json data..."
-
+        $wshell = New-Object -ComObject wscript.shell
+        $wshell.SendKeys('y')
+        $wshell.sendKeys("{Enter}")
         $functionAzureJSONData = invoke-webRequest -uri $azureCloudLocation -errorAction STOP
 
         out-logfile -string "Web request to obtain json data successful."
