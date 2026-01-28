@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.5
+.VERSION 1.6
 
 .GUID bc41499f-a9d2-4329-9110-d049984143c1
 
@@ -343,7 +343,7 @@ $azurePublicCloudDownloadLink = $null
 $azureGovernmentCloudDownloadLink = $null
 $azurePublicCloudJSONData = $NULL
 $azureGovernmentCloudJSONData = $null
-[string]$version = "1.2"
+[string]$version = "1.6"
 #Define the log file name
 
 $logFileName = $staticLogFileName
