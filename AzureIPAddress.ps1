@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.8
+.VERSION 1.3
 
 .GUID bc41499f-a9d2-4329-9110-d049984143c1
 
@@ -42,9 +42,7 @@ Param(
     [Parameter(Mandatory = $false)]
     [string]$IPAddressToTest="0.0.0.0",
     [Parameter(Mandatory = $true)]
-    [string]$logFolderPath=$NULL,
-    [Parameter(Mandatory = $false)]
-    [boolean]$versionTest=$false
+    [string]$logFolderPath=$NULL
 )
 
 $ErrorActionPreference = 'Stop'
@@ -343,7 +341,6 @@ $azurePublicCloudDownloadLink = $null
 $azureGovernmentCloudDownloadLink = $null
 $azurePublicCloudJSONData = $NULL
 $azureGovernmentCloudJSONData = $null
-[string]$version = "1.8"
 #Define the log file name
 
 $logFileName = $staticLogFileName
@@ -356,19 +353,6 @@ $azureGovernmentJSONExport = $global:logFile.replace(".log","-Government.xml")
 out-logfile -string "*************************************************************"
 out-logfile -string "Starting AzureIPAddress.ps1"
 out-logfile -string "*************************************************************"
-
-out-logfile -string "Testing to see if version test only..."
-
-if ($versionTest -eq $true)
-{
-    out-logfile -string "This is a version test only - return version."
-
-    return $version
-}
-else 
-{
-    out-logfile -string "Not a version test - proceeed."
-}
 
 out-logfile -string "Testing Powershell Version - 5.x required..."
 
