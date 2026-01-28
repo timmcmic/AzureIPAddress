@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.7
+.VERSION 1.8
 
 .GUID bc41499f-a9d2-4329-9110-d049984143c1
 
@@ -43,7 +43,7 @@ Param(
     [string]$IPAddressToTest="0.0.0.0",
     [Parameter(Mandatory = $true)]
     [string]$logFolderPath=$NULL,
-    [Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $false)]
     [boolean]$versionTest=$false
 )
 
@@ -343,7 +343,7 @@ $azurePublicCloudDownloadLink = $null
 $azureGovernmentCloudDownloadLink = $null
 $azurePublicCloudJSONData = $NULL
 $azureGovernmentCloudJSONData = $null
-[string]$version = "1.7"
+[string]$version = "1.8"
 #Define the log file name
 
 $logFileName = $staticLogFileName
